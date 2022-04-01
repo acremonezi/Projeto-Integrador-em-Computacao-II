@@ -42,7 +42,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 
 4. Infraestrutura de Nuvem:
    1. Servidor físico na núvem utilizando So you Start (https://www.soyoustart.com).
-   2. Sistema operacional do Servidor utilizando Linux stribuição Debian 11 (https://www.debian.org).
+   2. Sistema operacional do Servidor utilizando Linux distribuição Debian 11 (https://www.debian.org).
    3. Containers em **docker** utilizando **docker-compose** (https://www.docker.com).
    4. Registro de domínio publico utilizando Registro Br (https://registro.br).
    5. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
