@@ -9,7 +9,8 @@ O objetivo do projeto é desenvolver um software com **Framework Web** que utili
 6. Controle de Versão
 7. Análise de Dados
 
-
+<br>
+<br>
 
 ## O Projeto Escolhido
 Software para acompanhamento de Indicadores OKRs/KPIs.
@@ -19,7 +20,6 @@ Como medir a evolução de um planejamento de curto, médio e longo prazo? Como 
 
 ### Solução:
 Criar um software que permita cadastrar indicadores e a partir deles gerar um Dashboard para a apresentação de indicadores diversos de maneira clara e que suporte a tomada de decisão.
-
 
 ### Funcionalidades:
 1. Criar conta (tennant)
@@ -60,7 +60,9 @@ Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um con
    2. **Banco de Dados** utilizando XXXXX.
    3. **Aplicação Django** utilizando Gunicorn (https://gunicorn.org).
 
- 
+<br>
+<br>
+
 ## Links:
 1. Gerenciamento do Projeto: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/projects/1
 2. Documentação: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/wiki
