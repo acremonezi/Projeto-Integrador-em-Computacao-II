@@ -25,7 +25,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    2. Cadastrar indicador, selecionar se é OKR ou KPI,
    3. Cadastrar suas metas cadastrar a frequência de leitura, se é diária, semanal ou mensal.
 
-3. Área para:
+3. Área de Usuário para:
    1. Imput dos indicadores.
    2. Dashboard para Visualização dos Indicadores.
 
