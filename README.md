@@ -35,12 +35,13 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    2. GET com o ID do indicador - Permite a leitura do valor do indicador em JSON.
    
 ### Tecnologias Escolhidas para Implementar:
-1. Linguagem de Programação: **Python**
-2. Framework Web: **Django**
+1. Linguagem de Programação: **Python** (https://www.python.org).
+2. Framework Web: **Django** (https://www.djangoproject.com).
 3. Bibliotecas: **django-allauth**
 4. Bando de Dados: ????
+5. Controle de Versões: **Github** (https://github.com).
 
-4. Infraestrutura de Nuvem:
+6. Infraestrutura de Nuvem:
    1. Servidor físico na nuvem utilizando So you Start (https://www.soyoustart.com).
    2. Sistema operacional do Servidor utilizando Linux distribuição Debian 11 (https://www.debian.org).
    3. Containers em **docker** utilizando **docker-compose** (https://www.docker.com).
@@ -49,10 +50,9 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    6. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
    7. Serviço de envio de e-Mails Sendgrid (https://sendgrid.com).
 
-5. Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
+7. Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
    1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
    2. **Bando de Dados** utilizando XXXXX.
-   3. **Aplicação Django** utilizando Python (https://www.python.org), Django (https://www.djangoproject.com) e Gunicorn (https://gunicorn.org).
+   3. **Aplicação Django** utilizando Gunicorn (https://gunicorn.org).
 
-6. Controle de Versão: *Github*
  
