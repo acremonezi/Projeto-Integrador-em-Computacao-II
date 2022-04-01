@@ -9,7 +9,7 @@ O objetivo do projeto é desenvolver um software com **Framework Web** que utili
 7. Análise de Dados
 
 
-## O Projeto escolhido
+## O Projeto Escolhido
 Software para acompanhamento de Indicadores OKRs/KPIs.
 
 ### Dor:
@@ -37,4 +37,11 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 1. Framework Web: Django
 2. Bibliotecas, django-allauth
 3. Bando de Dados: 
-4. Ambiente de Nuvem: Estrutura de microservicos com Servidor Linux rodando containers em **docker** utilizando **docker-compose**.
+4. Infraestrutura:
+   1. Servidor Linux na nuvem com a distribuição Debian 11.
+   2. Containers em **docker** utilizando **docker-compose**.
+   3. Registro de domínio publico utilizando Registro Br (https://registro.br).
+   4. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
+   5. Estrutura de microserviços com:
+       1.  asdasd
+       2.  asdasd
