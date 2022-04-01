@@ -46,6 +46,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    3. Containers em **docker** utilizando **docker-compose** (https://www.docker.com).
    4. Registro de domínio publico utilizando Registro Br (https://registro.br).
    5. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
+   6. Serviço de envio de e-Mails Sendgrid (https://sendgrid.com).
 
 5. Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
    1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
