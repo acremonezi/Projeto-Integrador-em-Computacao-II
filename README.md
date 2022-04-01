@@ -54,6 +54,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    7. Serviço de envio de e-Mails Sendgrid (https://sendgrid.com).
 
 7. Arquitetura:
+<br>
 Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
    1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
    2. **Bando de Dados** utilizando XXXXX.
