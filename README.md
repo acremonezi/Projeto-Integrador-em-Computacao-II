@@ -51,4 +51,6 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
    2. **Bando de Dados** utilizando XXXXX.
    3. **Aplicação Django** utilizando Python (https://www.python.org), Django (https://www.djangoproject.com) e Gunicorn (https://gunicorn.org).
+
+6. Controle de Versão: *Github*
  
