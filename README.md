@@ -37,7 +37,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 ### Tecnologias Escolhidas para Implementar:
 1. Linguagem de Programação: **Python** (https://www.python.org).
 2. Framework Web: **Django** (https://www.djangoproject.com).
-3. Bibliotecas: **django-allauth**
+3. Bibliotecas: **django-allauth** (https://www.intenct.nl/projects/django-allauth).
 4. Bando de Dados: ????
 5. Controle de Versões: **Github** (https://github.com).
 
