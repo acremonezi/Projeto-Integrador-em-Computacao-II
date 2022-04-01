@@ -29,7 +29,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    1. Imput dos indicadores.
    2. Dashboard para Visualização dos Indicadores.
 
-4.API-REST para:
+4. API-REST para:
    1. POST com o ID do indicador - Permite o input do valor do indicador. (isso pode ser útil para cadastrar valores de indicadores automaticamente. Indicadores que recebam dados de outras aplicações.)
    2. GET com o ID do indicador - Permite a leitura do valor do indicador em JSON.
    
