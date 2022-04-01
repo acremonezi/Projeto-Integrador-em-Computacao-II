@@ -38,14 +38,15 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 2. Bibliotecas, django-allauth
 3. Bando de Dados: 
 
-4. Infraestrutura:
-   1. Servidor Linux na nuvem com a distribuição Debian 11.
-   2. Containers em **docker** utilizando **docker-compose**.
-   3. Registro de domínio publico utilizando Registro Br (https://registro.br).
-   4. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
+4. Infraestrutura de Nuvem:
+   1. Servidor físico na núvem utilizando So you Start (https://www.soyoustart.com).
+   2. Sistema operacional do Servidor utilizando Linux stribuição Debian 11 (https://www.debian.org).
+   3. Containers em **docker** utilizando **docker-compose** (https://www.docker.com).
+   4. Registro de domínio publico utilizando Registro Br (https://registro.br).
+   5. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
 
-5. Estrutura de microserviços com:
-   1. 1 Container com o serviço de Proxy Reverso utilizando Traefik (https://traefik.io)
-   2. 1 Container com o serviço de Bando de Dados utilizando XXXXX.
-   3. 1 Container com o serviço do Projeto Django utilizando Python, Django e Gunicorn (https://gunicorn.org).
+5. Estrutura de microserviços utilizando um container docker para cada um dos servicos abaixo:
+   1. Proxy Reverso utilizando Traefik (https://traefik.io)
+   2. Bando de Dados utilizando XXXXX.
+   3. Aplicação Django utilizando Python (https://www.python.org), Django (https://www.djangoproject.com) e Gunicorn (https://gunicorn.org).
  
