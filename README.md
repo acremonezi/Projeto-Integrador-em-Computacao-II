@@ -63,5 +63,5 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 2. Documentação: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/wiki
 3. Protótipo:
 4. EDR Diagram:
-5. Software: https://bee.espertamente.com.br
+5. Software:
 6. Vídeo:
