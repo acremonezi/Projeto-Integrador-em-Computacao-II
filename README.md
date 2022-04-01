@@ -57,7 +57,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 
 Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
    1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
-   2. **Bando de Dados** utilizando XXXXX.
+   2. **Banco de Dados** utilizando XXXXX.
    3. **Aplicação Django** utilizando Gunicorn (https://gunicorn.org).
 
  
