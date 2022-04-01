@@ -1,5 +1,5 @@
 # Projeto Integrador em Computacao II
-Objetivo do projeto é desenvolver um software com **Framework Web** que utilize/inclua:
+O objetivo do projeto é desenvolver um software com **Framework Web** que utilize/inclua:
 1. Banco de Dados
 2. Script Web (JavaScript)
 3. Nuvem
@@ -7,3 +7,7 @@ Objetivo do projeto é desenvolver um software com **Framework Web** que utilize
 5. Acessibilidade
 6. Controle de Versão
 7. Análise de Dados
+
+
+## O Projeto escolhido
+asdasd
