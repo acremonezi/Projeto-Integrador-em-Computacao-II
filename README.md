@@ -34,9 +34,10 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    2. GET com o ID do indicador - Permite a leitura do valor do indicador em JSON.
    
 ### Tecnologias Escolhidas para Implementar:
-1. Framework Web: Django
-2. Bibliotecas, django-allauth
-3. Bando de Dados: 
+1. Linguagem de Programação: **Python**
+2. Framework Web: **Django**
+3. Bibliotecas: **django-allauth**
+4. Bando de Dados: ????
 
 4. Infraestrutura de Nuvem:
    1. Servidor físico na núvem utilizando So you Start (https://www.soyoustart.com).
