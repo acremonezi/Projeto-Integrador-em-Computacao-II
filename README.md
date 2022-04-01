@@ -9,6 +9,7 @@ O objetivo do projeto é desenvolver um software com **Framework Web** que utili
 7. Análise de Dados
 
 
+
 ## O Projeto Escolhido
 Software para acompanhamento de Indicadores OKRs/KPIs.
 
