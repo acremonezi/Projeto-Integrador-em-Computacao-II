@@ -18,20 +18,23 @@ Como medir a evolução de um planejamento de curto, médio e longo prazo? Como 
 Criar um software que permita cadastrar indicadores e a partir deles gerar um Dashboard para a apresentação de indicadores diversos de maneira clara e que suporte a tomada de decisão.
 
 ### Funcionalidades:
-Criar conta (tennant)
-Área Administrativa (acessada pelo criador da conta tennat ou admins) para:
-Cadastrar usuários adicionais, selecionar o nível (admin/gerente/user)
-Cadastrar indicador
-selecionar se é OKR ou KPI,
-cadastrar suas metas
-cadastrar a frequência de leitura, se é diária, semanal ou mensal.
-Área para:
-Imput dos indicadores.
-Dashboard para Visualização dos Indicadores.
-API-REST para:
-POST com o ID do indicador - Permite o input do valor do indicador. (isso pode ser útil para cadastrar valores de indicadores automaticamente. Indicadores que recebam dados de outras aplicações.)
-GET com o ID do indicador - Permite a leitura do valor do indicador em JSON.
-Tecnologias para Implementar:
-Nodejs (ainda não sei nada a respeito, gostaria de aprender).
-MongoDB (sei muito pouco, tb. gostaria de aprender).
-Serviços em Docker (conheço razoavelmente bem).
+1. Criar conta (tennant)
+2. Área Administrativa (acessada pelo criador da conta tennat ou admins) para:
+   1.Cadastrar usuários adicionais, selecionar o nível (admin/gerente/user)
+   2.Cadastrar indicador
+   3.selecionar se é OKR ou KPI,
+   4.cadastrar suas metas cadastrar a frequência de leitura, se é diária, semanal ou mensal.
+
+3. Área para:
+   1.Imput dos indicadores.
+   2.Dashboard para Visualização dos Indicadores.
+
+4.API-REST para:
+   1.POST com o ID do indicador - Permite o input do valor do indicador. (isso pode ser útil para cadastrar valores de indicadores automaticamente. Indicadores que recebam dados de outras aplicações.)
+   2.GET com o ID do indicador - Permite a leitura do valor do indicador em JSON.
+   
+### Tecnologias Escolhidas para Implementar:
+1. Framework Web: Django
+2. Bibliotecas, django-allauth
+3. Bando de Dados: 
+4. Ambiente de Nuvem: Estrutura de microservicos com Servidor Linux rodando containers em **docker** utilizando **docker-compose**.
