@@ -46,7 +46,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    5. Certificado de segurança SSL/HTTPS utilizando Let's Encrypt (https://letsencrypt.org).
 
 5. Estrutura de microserviços utilizando um container docker para cada um dos servicos abaixo:
-   1. Proxy Reverso utilizando Traefik (https://traefik.io)
-   2. Bando de Dados utilizando XXXXX.
-   3. Aplicação Django utilizando Python (https://www.python.org), Django (https://www.djangoproject.com) e Gunicorn (https://gunicorn.org).
+   1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
+   2. **Bando de Dados** utilizando XXXXX.
+   3. **Aplicação Django** utilizando Python (https://www.python.org), Django (https://www.djangoproject.com) e Gunicorn (https://gunicorn.org).
  
