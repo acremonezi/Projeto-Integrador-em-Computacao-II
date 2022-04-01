@@ -1,5 +1,6 @@
 # Projeto Integrador em Computacao II
 O objetivo do projeto é desenvolver um software com **Framework Web** que utilize/inclua:
+
 1. Banco de Dados
 2. Script Web (JavaScript)
 3. Nuvem
@@ -18,6 +19,7 @@ Como medir a evolução de um planejamento de curto, médio e longo prazo? Como 
 
 ### Solução:
 Criar um software que permita cadastrar indicadores e a partir deles gerar um Dashboard para a apresentação de indicadores diversos de maneira clara e que suporte a tomada de decisão.
+
 
 ### Funcionalidades:
 1. Criar conta (tennant)
@@ -56,3 +58,10 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    3. **Aplicação Django** utilizando Gunicorn (https://gunicorn.org).
 
  
+## Links:
+1. Gerenciamento do Projeto:
+2. Documentação:
+3. Protótipo:
+4. EDR Diagram:
+5. Software: https://bee.espertamente.com.br
+6. Vídeo:
