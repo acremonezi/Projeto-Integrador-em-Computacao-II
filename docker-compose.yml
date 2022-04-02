@@ -116,7 +116,6 @@ services:
     networks:
       - frontend      # It is only necessary to expose port 3306.
       - backend
-      - bridge          # It is only necessary to maintain name resolution for both dev and production environments.
 
     ports:
       - "3306:3306"   # Necessary to connect with MySQL WorkBench.
@@ -145,4 +144,4 @@ services:
       MYSQL_PASSWORD: 'i2H9F9ukEGi2H9F9ukEGVZWNpY4lrHVZWNpY4lrH'
 
     labels:
-      traefik.enable: false
+      traefik.enable: true
