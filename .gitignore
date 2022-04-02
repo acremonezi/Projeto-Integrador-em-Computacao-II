@@ -30,6 +30,9 @@ django_project/venv.bak/
 __pycache__/
 django_project/__pycache__/
 
+__pycache__
+django_project/__pycache__
+
 
 # Ignore Installer logs
 # ----------------------------------
