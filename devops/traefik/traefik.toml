@@ -1,0 +1,61 @@
+[global]
+  sendAnonymousUsage = false
+  checkNewVersion = false
+
+# API and dashboard configuration
+[api]
+    dashboard = true
+    #debug = true
+
+[log]
+  level = "WARN"
+  # level = "DEBUG"
+  filePath = "./logs/traefik/traefik.log"
+  format = "json"
+
+
+#[tracing]
+#  serviceName = "traefik"
+#  spanNameLimit = 150
+
+#[metrics]
+#  [metrics.prometheus]
+#    buckets = [0.1,0.3,1.2,5.0]
+
+[accessLog]
+   filePath = "./logs/traefik/traefik_access.log"
+   format = "json"
+   bufferingSize = 100
+
+
+[providers]
+  [providers.docker]
+    endpoint = "unix:///var/run/docker.sock"
+    exposedByDefault = false
+    watch = true
+    swarmMode = false
+  [providers.file]
+    filename = "/etc/traefik/traefik_dynamic.toml"
+    watch = true
+
+
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+    [entryPoints.web.http]
+      [entryPoints.web.http.redirections]
+        [entryPoints.web.http.redirections.entryPoint]
+          to = "websecure"
+          scheme = "https"
+  [entryPoints.websecure]
+    address = ":443"
+
+
+[certificatesResolvers]
+  [certificatesResolvers.letsencrypt]
+    [certificatesResolvers.letsencrypt.acme]
+      email = "webmaster@espertamente.com.br"
+      storage = "acme.json"
+      #caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+      caServer = "https://acme-v02.api.letsencrypt.org/directory"
+      [certificatesResolvers.letsencrypt.acme.tlsChallenge]
