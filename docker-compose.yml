@@ -84,6 +84,8 @@ services:
   django_gunicorn:
     restart: unless-stopped
     container_name: django_gunicorn
+    
+    image: django_gunicorn:1.0.0
     build:
       context: .
       dockerfile: ./devops/django_gunicorn/Dockerfile
