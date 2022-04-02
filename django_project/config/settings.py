@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y8c!n%w*(qx-5yp#omar9^r)tlvlf6j^#4vp6#3r&!a9w4(a&h
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://bee.espertamente.com.br','http://bee.espertamente.com.br']
 
 
 # Application definition
