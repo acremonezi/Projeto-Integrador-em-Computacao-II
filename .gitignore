@@ -42,7 +42,8 @@ django_project/pip-log.txt
 django_project/pip-delete-this-directory.txt
 
 
-# Distribution / packaging
+# Ignore Distribution / Packaging
+# ----------------------------------
 .Python
 build/
 develop-eggs/
