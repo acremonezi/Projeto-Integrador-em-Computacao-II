@@ -7,7 +7,6 @@ data/*
 # Ignore Python Environment
 # ----------------------------------
 venv/*
-.env
 .venv
 env/
 venv/
