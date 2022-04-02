@@ -1,3 +1,42 @@
 # Ignore everything in the "data" directory, except: "traefik"
+# ----------------------------------
 data/*
 !data/traefik/
+
+
+# Ignore Python Environment
+# ----------------------------------
+venv/*
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+django_project/venv/*
+django_project/.env
+django_project/.venv
+django_project/env/
+django_project/venv/
+django_project/ENV/
+django_project/env.bak/
+django_project/venv.bak/
+
+
+# Ignore Byte-compiled
+# ----------------------------------
+__pycache__/
+django_project/__pycache__/
+
+
+# Ignore Installer logs
+# ----------------------------------
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+django_project/*.log
+django_project/pip-log.txt
+django_project/pip-delete-this-directory.txt
