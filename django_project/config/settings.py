@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'django_project',
         'USER': 'django_project',
         'PASSWORD': 'i2H9F9ukEGi2H9F9ukEGVZWNpY4lrHVZWNpY4lrH',
-        'HOST': 'mysql',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
