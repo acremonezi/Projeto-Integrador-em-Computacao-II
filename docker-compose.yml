@@ -116,7 +116,7 @@ services:
     networks:
       - frontend      # It is only necessary to expose port 3306.
       - backend
-      - host          # It is only necessary to maintain name resolution for both dev and production environments.
+      - bridge          # It is only necessary to maintain name resolution for both dev and production environments.
 
     ports:
       - "3306:3306"   # Necessary to connect with MySQL WorkBench.
