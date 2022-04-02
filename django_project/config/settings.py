@@ -45,7 +45,7 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS')]
+CSRF_TRUSTED_ORIGINS = ['https://bee.espertamente.com.br','http://bee.espertamente.com.br','http://localhost','http://127.0.0.1','http://localhost:8080','http://127.0.0.1:8080']
 
 
 # Application definition
