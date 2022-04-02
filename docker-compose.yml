@@ -1,5 +1,41 @@
 version: '3.7'
+
+networks:
+  frontend:
+  backend:
+
 services:
+
+# -----------------------------------------------------------------
+# Reverse Proxy
+
+  traefik:
+    image: traefik:v2.6
+    container_name: "traefik"
+    restart: unless-stopped
+
+    networks:
+      - frontend
+      - backend
+
+    ports:
+      - 80:80
+      - 443:443
+      
+    volumes:
+      # Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+      # Define Time
+      - /etc/localtime:/etc/localtime:ro
+
+       # Configuration      
+      - ./devops/traefik/traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./devops/traefik/traefik_dynamic.toml:/etc/traefik/traefik_dynamic.toml:ro
+
+      # Data Storage 
+      - ./data/traefik/acme.json:/acme.json
+
 
 # -----------------------------------------------------------------
 # WebServer
@@ -12,6 +48,10 @@ services:
     depends_on:
       - django_gunicorn
 
+    networks:
+      - frontend
+      - backend
+
     ports:
       - "8080:80"
 
@@ -23,6 +63,21 @@ services:
       # Define Time
       - /etc/localtime:/etc/localtime:ro
 
+    labels:
+      traefik.enable: true
+
+      traefik.http.routers.pi01-http.rule: Host(`bee.espertamente.com.br`)
+      traefik.http.routers.pi01-http.entrypoints: web
+      traefik.http.routers.pi01-http.middlewares: https-redirect@file
+
+      traefik.http.routers.pi01-https.rule: "Host(`bee.espertamente.com.br`)"
+      traefik.http.routers.pi01-https.entrypoints: "websecure"
+      traefik.http.routers.pi01-https.middlewares: "security@file, compression@file"
+
+      traefik.http.routers.pi01-https.tls: "true"
+      traefik.http.routers.pi01-https.tls.certresolver: "letsencrypt"
+
+
 # -----------------------------------------------------------------
 # Django e Gunicorn
 
@@ -33,6 +88,10 @@ services:
       context: .
       dockerfile: ./devops/django_gunicorn/Dockerfile
  
+    networks:
+      - frontend
+      - backend
+
     ports:
       - "8001:8000"
 
@@ -50,6 +109,10 @@ services:
     image: mysql:8.0
     restart: unless-stopped
     container_name: "mysql"
+
+    networks:
+      - frontend
+      - backend
 
     ports:
       - "33061:3306"
@@ -77,3 +140,5 @@ services:
       MYSQL_USER: 'mysql'
       MYSQL_PASSWORD: 'F6fmy9lMuitoObrigado!!!1SzRcD1Zqsxhs'
 
+    labels:
+      traefik.enable: false
