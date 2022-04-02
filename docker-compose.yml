@@ -118,7 +118,7 @@ services:
       - backend
 
     ports:
-      - "3306:3306"   # Necessary to connect with MySQL WorkBench.
+      - "3306:3306"   # Only Necessary to connect with MySQL WorkBench.
 
     volumes:
       # Configuration
@@ -144,4 +144,4 @@ services:
       MYSQL_PASSWORD: 'i2H9F9ukEGi2H9F9ukEGVZWNpY4lrHVZWNpY4lrH'
 
     labels:
-      traefik.enable: true
+      traefik.enable: false
