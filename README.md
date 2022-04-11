@@ -10,10 +10,9 @@ O objetivo do projeto é desenvolver um software com **Framework Web** que utili
 7. Testes
 8. Análise de Dados
 
-**Ementa:**  Resolução de problemas. Levantamento de requisitos. Desenvolvimento web com framework. HTML. CSS. Linguagem de script (Javascript). Banco de Dados. Controle de Versão. Nuvem. API. Acessibilidade. Testes. Análise de dados.
+**Ementa:**  Resolução de problemas. Levantamento de requisitos. Desenvolvimento web com framework. HTML. CSS. Linguagem de script (Javascript). Banco de Dados. Controle de Versão. Nuvem. API. Acessibilidade. Testes. Análise de dados.<br>
 
-<br>
-Data: Abril, 2022.
+Data: 1o Semestre, 2022.
 <br>
 
 ## O Projeto Escolhido
