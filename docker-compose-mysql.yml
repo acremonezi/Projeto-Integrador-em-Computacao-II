@@ -10,16 +10,16 @@ services:
 # Database
 
   mysql:
-    image: mysql:8.0
+    image: mysql:5.7
     restart: unless-stopped
     container_name: "mysql"
 
     networks:
-      - frontend
+      - frontend      # It is only necessary to expose port 3306.
       - backend
 
     ports:
-      - "3306:3306"
+      - "3306:3306"   # Only Necessary to connect with MySQL WorkBench.
 
     volumes:
       # Configuration
@@ -32,9 +32,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
     command:
-       - --default-authentication-plugin=mysql_native_password
-       - --character-set-server=utf8
-       - --collation-server=utf8_general_ci
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8
+      - --collation-server=utf8_general_ci
+      - --disable-log-bin
 
     environment:
       # Database root user passord:
