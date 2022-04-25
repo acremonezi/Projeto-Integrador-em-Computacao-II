@@ -16,7 +16,7 @@ Data: 1o Semestre, 2022.
 <br>
 
 ## O Projeto Escolhido
-Software para acompanhamento de Indicadores OKRs/KPIs.
+Software para acompanhamento de Indicadores OKRs (Objectives and Key Results) e/ou KPIs (Key Performance Indicator).
 
 ### Dor:
 Como medir a evolução de um planejamento de curto, médio e longo prazo? Como saber se a execução realmente está sendo efetiva e se vai cumprir o prazo?
