@@ -44,7 +44,7 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
    1. Linguagem de Programação: **Python** (https://www.python.org).
    2. Framework Web: **Django** (https://www.djangoproject.com).
    3. Bibliotecas: **django-allauth** (https://www.intenct.nl/projects/django-allauth).
-   4. Bando de Dados: ????
+   4. Bando de Dados: **MySQL** (https://www.mysql.com).
    5. Controle de Versões: **Github** (https://github.com).
 
 6. Infraestrutura de Nuvem:
@@ -59,8 +59,8 @@ Criar um software que permita cadastrar indicadores e a partir deles gerar um Da
 7. Arquitetura:
 
 Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um container docker para cada um dos servicos abaixo:
-   1. **Proxy Reverso** utilizando Traefik (https://traefik.io)
-   2. **Banco de Dados** utilizando XXXXX.
+   1. **Proxy Reverso** utilizando Traefik (https://traefik.io).
+   2. **Banco de Dados** utilizando MySQL (https://www.mysql.com).
    3. **Aplicação Django** utilizando Gunicorn (https://gunicorn.org).
 
 <br>
