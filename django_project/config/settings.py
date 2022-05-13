@@ -48,16 +48,26 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://bee.espertamente.com.br','http://bee.espertamente.com.br','http://localhost','http://127.0.0.1','http://localhost:8080','http://127.0.0.1:8080']
 
 
-# Application definition
-
 INSTALLED_APPS = [
+
+    # myapps
+    'accounts',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # django
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
+# Application definition
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -156,3 +166,70 @@ STATIC_ROOT = os.path.join('static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Options for django_allauth
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+# Provider specific settings
+'''
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
+'''
+
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS =True
+
+LOGIN_REDIRECT_URL = 'accounts:index'
+
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'accounts:index'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
+
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
+
+ACCOUNT_LOGIN_ON_PASSWORD_RESET = False
+
+ACCOUNT_LOGOUT_REDIRECT_URL = 'accounts:index'
+
+ACCOUNT_SESSION_REMEMBER = None
+
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
+ACCOUNT_SIGNUP_REDIRECT_URL = 'accounts:index'
+
+ACCOUNT_UNIQUE_EMAIL = True
