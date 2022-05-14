@@ -84,3 +84,8 @@ django_project/*.egg-info/
 django_project/.installed.cfg
 django_project/*.egg
 django_project/MANIFEST
+
+# Microsoft Office temp files
+~$*.doc*
+~$*.xls*
+~$*.ppt*
