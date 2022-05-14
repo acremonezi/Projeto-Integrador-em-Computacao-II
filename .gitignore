@@ -84,3 +84,6 @@ django_project/*.egg-info/
 django_project/.installed.cfg
 django_project/*.egg
 django_project/MANIFEST
+~$.doc
+~$.xls
+~$.ppt
