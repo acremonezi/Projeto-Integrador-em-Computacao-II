@@ -233,3 +233,9 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SIGNUP_REDIRECT_URL = 'accounts:index'
 
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+# sendgrid configuration
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = env("SENDGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
