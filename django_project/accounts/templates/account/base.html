@@ -13,8 +13,8 @@
 </head>
 <body>
 {% block body %}
-<div class="container-fluid">
-  <nav class="navbar navbar-expand-lg bg-light">
+<div class="container-fluid bg-warning" >
+  <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">bee.espertamente.com.br</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,10 @@
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <h4> Hello {{ request.user }}</h4>
-            <a class="nav-link" href="{% url 'account_logout' %}">Cadastre-se</a>
+            <h5> Hello {{ request.user }}</h5>
+            </li>
+          <li>
+            <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
           </li>
           {% else %}
           <li class="nav-item">
