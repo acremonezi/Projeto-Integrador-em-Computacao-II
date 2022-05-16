@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from accounts import views
+
 
 urlpatterns = [
+    # Atenção ao caminho do base.html
+    # caminho do base: accounts/templates/account/base.html
+    # usar {% extends 'account/base.html' %}
+    path('', views.index, name='project_index'), # index page
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+
+    # All templates for allauth are in django_project/accounts/templates/account the base.html for the project
+    path('accounts/', include('allauth.urls')),
 ]
