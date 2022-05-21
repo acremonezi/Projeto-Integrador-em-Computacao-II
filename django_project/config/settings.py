@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     # myapps
     'accounts',
+    'main',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
