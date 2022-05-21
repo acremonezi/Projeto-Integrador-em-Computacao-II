@@ -1,5 +1,8 @@
 from django.db import models
 
+# The relationship between the django-allauth
+# user tables and the "Accounts" table bellow was not
+# done yet to avoid mistakes.
 
 # Table "Accounts"
 class Accounts(models.Model):
