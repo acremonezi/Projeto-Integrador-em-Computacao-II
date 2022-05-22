@@ -69,7 +69,7 @@ Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um con
 ## Links:
 1. Gerenciamento do Projeto: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/projects/1
 2. Documentação: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/wiki
-3. Protótipo:
+3. Protótipo: https://www.figma.com/file/0G2EYzJad1vljI39ivhons/PI-II?node-id=0%3A1
 4. Data Models: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/tree/main/docs/data_models
 5. Arquitetura: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/tree/main/docs/architecture
 6. Repositório Git: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/
