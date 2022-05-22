@@ -8,6 +8,7 @@ data/*
 # ----------------------------------
 venv/*
 .venv
+.env
 env/
 venv/
 ENV/
@@ -17,6 +18,7 @@ venv.bak/
 django_project/venv/*
 django_project/.venv
 django_project/env/
+django_project/.env
 django_project/venv/
 django_project/ENV/
 django_project/env.bak/
