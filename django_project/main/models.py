@@ -1,50 +1,60 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# The relationship between the django-allauth
-# user tables and the "Accounts" table bellow was not
-# done yet to avoid mistakes.
-
-# Table "Accounts"
-class Accounts(models.Model):
+# Table "Account"
+class Account(models.Model):
     # Main Columns
     createdDate = models.DateField(auto_now_add=True)
-    name = models.CharField(max_length = 200)
+    accountName = models.CharField(max_length = 100)
+    
+    # User Owner Column
+    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+ 
 
-# Table "Projects"
-class Projects(models.Model):
+# Table "Project"
+class Project(models.Model):
     # Main Columns
     createdDate = models.DateField(auto_now_add=True)
-    name = models.CharField(max_length = 200)
+    projectName = models.CharField(max_length = 200)
+    
+    # User Owner Column
+    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
     
     # Relationships
-    account = models.ForeignKey(Accounts, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
     
 
-# Table "Objectives"
-class Objectives(models.Model):
+# Table "Objective"
+class Objective(models.Model):
     # Main Columns
     createdDate = models.DateField(auto_now_add=True)
-    name = models.CharField(max_length = 200)
-    
-    # Featured Columns
-    targetValue = models.FloatField()
-    targetUnit = models.CharField(max_length=3)
-    targetDate = models.DateField()
-
-    # Relationships
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
-
-
-# Table "results"
-class Results(models.Model):
-    # Main Columns
-    createdDate = models.DateField(auto_now_add=True)
-    name = models.CharField(max_length = 200)
+    objectiveName = models.CharField(max_length = 200)
     
     # Featured Columns
     targetValue = models.FloatField()
     targetUnit = models.CharField(max_length=3)
     targetDate = models.DateField()
     
+    # User Owner Column
+    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+
     # Relationships
-    objective = models.ForeignKey(Objectives, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+
+# Table "Metric"
+class Metric(models.Model):
+    # Main Columns
+    createdDate = models.DateField(auto_now_add=True)
+    metricName = models.CharField(max_length = 200)
+    
+    # Featured Columns
+    targetValue = models.FloatField()
+    targetUnit = models.CharField(max_length=3)
+    targetDate = models.DateField()
+    
+    # User Owner Column
+    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    # Relationships
+    objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
