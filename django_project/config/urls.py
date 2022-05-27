@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from accounts import views
+from accounts import views as accountsviews
 
 
 urlpatterns = [
     # Atenção ao caminho do base.html
     # caminho do base: accounts/templates/account/base.html
     # usar {% extends 'account/base.html' %}
-    path('', views.index, name='project_index'), # index page
+    path('', accountsviews.index, name='project_index'), # index page
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts')),
 
