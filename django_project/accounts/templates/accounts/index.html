@@ -3,9 +3,52 @@
 {% block head_title %} Index {% endblock %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '\css\index.css' %}">
+<!--home section starts-->
 
-<h1>Index</h1>
+<section class="home" id="home">
+    <div class="content">
+        <h3>A plataforma para acompanhamento de metas que você procurava está aqui!</h3>
+        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente. Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
+        <a href="{% url 'account_signup' %}" class="btn">cadastre-se</a>
+    </div>
 
-<h3>Hello {{ request.user }}</h3>
+    <div>
+        <img src="{% static '/imgs/hands.svg' %}" alt="">
+    </div>
+</section>
+
+<!--home section ends-->
+<!--features section starts-->
+<section class="features" id="features">
+    <h1 class="heading">Conheça como funciona a nossa solução:</h1>
+    <div class="box-container">
+        <div class="box">
+            <p>Com a Bee você é capaz de criar diversos projetos para sua empresa. Cada um deles precisa ter um objetivo bem definido.</p>
+        </div>
+        <div class="box">
+            <p>Em cada projeto, você pode definir quais serão os objetivos e métricas a serem utilizados durante o processo.</p>
+        </div>
+        <div class="box">
+            <p>O software oferece um relatório detalhado da progressão dos objetivos ao longo do tempo.</p>
+        </div>
+    </div>
+</section>
+
+<!--features section ends-->
+<!--contact us section starts-->
+<div class="contact">
+   <h3>Ficou com alguma dúvida?</h3>
+   <p>Deixe seus dados abaixo que em breve entraremos em contato:</p>
+    <form action="">
+        <input type="text" placeholder="Nome">
+        <input type="email" placeholder="E-mail">
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+<!--contact us section ends-->
+</body>
+</html>
 
 {% endblock %}
