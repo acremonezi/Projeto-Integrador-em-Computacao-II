@@ -2,13 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Table "Account"
-class Account(models.Model):
-    # Main Columns
-    createdDate = models.DateField(auto_now_add=True)
-    accountName = models.CharField(max_length = 100)
+# OBS: It will be maybe used in the future for multi-tenancy accounts.
+
+# class Account(models.Model):
+#     # Main Columns
+#     createdDate = models.DateField(auto_now_add=True)
+#     accountName = models.CharField(max_length = 100)
     
-    # User Owner Column
-    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+#     # User Owner Column
+#     userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
  
 
 # Table "Project"
@@ -21,7 +23,7 @@ class Project(models.Model):
     userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
     
     # Relationships
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    # account = models.ForeignKey(Account, on_delete=models.CASCADE)
     
 
 # Table "Objective"

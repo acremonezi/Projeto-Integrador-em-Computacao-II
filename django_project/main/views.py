@@ -7,19 +7,19 @@ from .models import Account, Project, Objective, Metric
 # a user needs to have access to more than one Account/Organization.
 # Image an Account as a "Company".
 
-def createAccount(request):
-    if request.method == 'GET':
-        return render(request, 'create-account/index.html')
+# def createAccount(request):
+#     if request.method == 'GET':
+#         return render(request, 'create-account/index.html')
     
-    elif request.method == 'POST':  
-        accountName = request.POST.get('accountName')
+#     elif request.method == 'POST':  
+#         accountName = request.POST.get('accountName')
         
-        # Create an instance of the class "Account" named "account"
-        # and save it into the database.
-        account = Account(accountName = accountName)
-        account.save()
+#         # Create an instance of the class "Account" named "account"
+#         # and save it into the database.
+#         account = Account(accountName = accountName)
+#         account.save()
         
-        return HttpResponse('Conta Criada!')
+#         return HttpResponse('Conta Criada!')
         
         
 # Create a Project
