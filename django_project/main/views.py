@@ -75,7 +75,7 @@ def createMetric(request):
         # The frontend need to provide a selection box showing
         # the "Objective" in name of the user. So, the user can select one.
         
-        # objective = ...
+        # objective = ....
         
         # Create an instance of the class "Metric" named "metric"
         # and save it into the database.
