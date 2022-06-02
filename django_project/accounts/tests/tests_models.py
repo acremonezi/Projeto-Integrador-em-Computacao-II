@@ -1,19 +1,23 @@
 from django.test import TestCase, Client
 from django.contrib.auth import models
-
+from django.contrib.auth import authenticate
+from django.urls import reverse
 
 class ClientTestCase(TestCase):
     def setUp(self) -> None:
         '''
         Create a user to use in tests
         '''
-        client1 = models.User.objects.create(
-            password = 'fabiano123',
-            username = 'fabiano',
-            first_name = 'Fabiano',
-            last_name = 'Venturini',
-            email = 'fabiano@fabiano.com',
+        self.client1 = models.User.objects.create(
+            username='fabiano',
+            first_name='Fabiano',
+            last_name='Venturini',
+            email='fabiano@fabiano.com',
+            is_active=True,
         )
+        # Tip: https://stackoverflow.com/questions/2619102/djangos-self-client-login-does-not-work-in-unit-tests
+        self.client1.set_password('fabiano123')
+        self.client1.save()
         # various tests needs this variable
         self.p1 = models.User.objects.get(username='fabiano')
         self.c = Client()
@@ -40,12 +44,18 @@ class ClientTestCase(TestCase):
         '''
         Test if the user is member of the team
         '''
-        self.assertEquals(self.p1.is_staff, False)
+        self.assertFalse(self.p1.is_staff)
 
-    def test_login_user_true(self):
+    def test_login_user_true_with_email(self):
         '''
-        Test if the user can do login
+        Test if the user can login with email
         '''
-        # Todo terminar
-        response = self.c.login(email='fabiano@fabiano.com', password='fabiano123')
-        self.assertEquals(response.__str__(), 'True')
+        user = authenticate(username='fabiano@fabiano.com', password='fabiano123')
+        self.assertTrue(user.is_authenticated)
+
+    def test_login_with_password_wrong(self):
+        '''
+        Test if the user can do login with wrong password
+        '''
+        user = authenticate(username='fabiano@fabiano.com', password='wrongPassword')
+        self.assertIsNone(user)
