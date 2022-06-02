@@ -4,8 +4,9 @@ from . import views
 app_name = 'main'
 
 urlpatterns = [
-    path('create-account/', views.createAccount, name = "Create Account"),
-    path('create-project/', views.createProject, name = "Create Project"),
-    path('create-objective/', views.createObjective, name = "Create Objective"),
-    path('create-metric/', views.createMetric, name = "Create Metric"),
+    # path('create-account/', views.createAccount, name = "Create Account"),
+    path('main', views.main, name = "Main"),
+    path('project/create/', views.createProject, name = "Create Project"),
+    path('objective/create/', views.createObjective, name = "Create Objective"),
+    path('metric/create/', views.createMetric, name = "Create Metric"),
 ]
