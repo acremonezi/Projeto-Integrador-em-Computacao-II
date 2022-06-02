@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+:root{
+    --purple: #814096;
+    --pink: #F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+*::selection{
+    background: var(--pink);
+    color: #fff;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: #FFFBEF;
+}
+#cadastro{
+    background: orange;
+    border-radius: 20px;
+    padding: 3px 3px;
+    cursor: pointer;
+}
+section{
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7rem;
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: black;
+    font-size: 1.7rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 .5rem 1rem rgba(0, 0,0,.1);
+    transition: all .3s ease-out;
+    text-transform: none;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.heading{
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: none;
+    padding: 1rem;
+}
+header{
+    position: fixed;
+    top: -3; left: 0;
+    height: 45px;
+    width: 1366px;
+    background: #FFF27D;
+    box-shadow: 0 .5rem 1rem rgba(0 0 0 .1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .logo{
+    font-size: 2rem;
+    color: var(--black);
+}
+header .navbar a{
+    font-size: 1.7rem;
+    margin-left: 2rem;
+    color: var(--black);
+}
+header .navbar a:hoover{
+    color: var(--orange);
+}
+
+
+
+/*media queries*/
+@media (max-width:1366px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px){
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0;
+        width: 100%;
+        background: #FFF27D;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        box-shadow: 0 .5rem 1rem rgba(0 0 0 .1);
+    }
+    
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+.home .content h3{
+    font-size: 5.5rem;
+    color: black;
+    text-transform: none;
+}
+.home .content p{
+    font-size: 2rem;
+    color: black;
+    padding: 2rem 0;
+    text-transform: none;
+    font-weight: 400;
+}
+.features{
+    background: #FFF27D;
+}
+.features .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.features .box-container .box{
+    flex:1 1 30rem;
+    background:white;
+    border-radius: .5rem;
+    border: 1rem solid rgba(0 0 0 .2);
+    box-shadow: 0 .5rem 1rem rgba(0 0 0 .1);
+    margin: 1.5rem;
+    padding: 15rem 3rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+.features .box-container .box p{
+    font-size: 2.5rem;
+    color: black;
+    padding: 1rem 0;
+    text-transform: none;
+}
+.contact{
+    text-align: center;
+    padding: 5rem 1rem;
+    background: #FFFBEF;
+    background-size: cover;
+    background-position: center;
+}
+.contact h3{
+    color: black;
+    font-size: 4rem;
+    text-transform: none;
+}
+.contact p{
+    color: black;
+    font-size: 4rem;
+    text-transform: none;
+    margin: 2rem auto;
+    width: 70rem;
+}
+.contact form{
+    display: flex;
+    max-width: 70rem;
+    padding: .5rem;
+    margin: 2rem auto;
+    height: 5.5rem;
+}
+.contact form input[type='text']{
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    background: rgb(192, 189, 189);
+    border-radius: 20px;
+    text-transform: none;
+}
+.contact form input[type='text']::placeholder{
+    color: black;
+    text-transform: none;
+}
+.contact form input[type='email']{
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    background: rgb(192, 189, 189);
+    border-radius: 20px;
+    text-transform: none;
+}
+.contact form input[type='email']::placeholder{
+    color: black;
+    text-transform: none;
+}
+.contact form input[type='submit']{
+    padding: 0 4rem;
+    font-size: 1.7rem;
+    background: #FFB743;    ;
+    border-radius: 20px;
+    text-transform: none;
+    cursor: pointer;
+}
