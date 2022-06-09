@@ -1,16 +1,17 @@
 {% extends 'account/base.html' %}
+{% load static %}
 
 {% block head_title %} Index {% endblock %}
-
-{% block content %}
-{% load static %}
+{% block extra_head %}
 <link rel="stylesheet" href="{% static '\css\index.css' %}">
-<!--home section starts-->
+{% endblock %}
+{% block content %}
 
 <section class="home" id="home">
     <div class="content">
         <h3>A plataforma para acompanhamento de metas que você procurava está aqui!</h3>
-        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente. Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
+        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente.
+            Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
         <a href="{% url 'account_signup' %}" class="btn">cadastre-se</a>
     </div>
 
@@ -48,7 +49,5 @@
     </form>
 </div>
 <!--contact us section ends-->
-</body>
-</html>
 
 {% endblock %}
