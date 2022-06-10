@@ -44,7 +44,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'bee.espertamente.com.br']
 CSRF_TRUSTED_ORIGINS = ['https://bee.espertamente.com.br','http://bee.espertamente.com.br','http://localhost','http://127.0.0.1','http://localhost:8080','http://127.0.0.1:8080']
 
 
@@ -215,7 +215,9 @@ ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
 
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+
+CCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 
