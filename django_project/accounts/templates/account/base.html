@@ -17,41 +17,43 @@
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTQ5Q5X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #FFF27D">
-                <div class="container-fluid">
-                    <a href="{% url 'project_index' %}" class="logo">
-                        <img src="{% static '/imgs/Hive logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-                        <span>Bee</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="primary-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link home" aria-current="page" href="{% url 'project_index' %}">Home <span class="sr-only"></span></a>
-                            </li>
-                        </ul>
-                        <ul class="secondary-nav">
-                            {% if request.user.is_authenticated %}
-                                <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
-                            {% else %}
-                                {% if request.path == '/accounts/signup/' %}
+        <header class="p-3">
+	    <div>
+                <nav class="navbar navbar-expand-lg" style="background-color: #FFF27D">
+                    <div class="container-fluid">
+                        <a href="{% url 'project_index' %}" class="logo">
+                            <img src="{% static '/imgs/Hive logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                            <span>Bee</span>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="primary-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link home" aria-current="page" href="{% url 'project_index' %}">Home <span class="sr-only"></span></a>
+                                </li>
+                            </ul>
+                            <ul class="secondary-nav">
+                                {% if request.user.is_authenticated %}
+                                    <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
                                 {% else %}
-                                    <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
-                                {% endif %}
+                                    {% if request.path == '/accounts/signup/' %}
+                                    {% else %}
+                                        <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
+                                    {% endif %}
 
-                                {% if request.path == '/accounts/login/' %}
-                                {% else %}
-                                    <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                                    {% if request.path == '/accounts/login/' %}
+                                    {% else %}
+                                        <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
+                </nav>
+	    </div>
+        </header>
         <!--
         <header>
             <div>
