@@ -49,33 +49,6 @@
                             {% endif %}
                         </ul>
                     </div>
-
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav primary-nav">
-                                <li class="nav-item" aria="page">
-                                    <a class="nav-link active" aria-current="page" href="{% url 'project_index' %}"><span class="sr-only"></span>Home</a>
-                                </li>
-                                {% if request.user.is_authenticated %}
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
-                                {% else %}
-                                    {% if request.path == '/accounts/signup/' %}
-                                    {% else %}
-                                        <li class="nav-item"><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
-                                    {% endif %}
-                                    
-                                    {% if request.path == '/accounts/login/' %}
-                                    {% else %}
-                                        <li class="nav-item" ><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
-                                    {% endif %}
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </nav>
         </header>
