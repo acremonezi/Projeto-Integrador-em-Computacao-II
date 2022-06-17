@@ -5,14 +5,14 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid pt-5 ">
   <div class="row align-items-center">
     <div class="col-4"></div>
     <div class="col-4">
       <h1>{% trans "Sign Up" %}</h1>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+       <form class="signup " id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {% for item in form %}
            <label class="form-label">{{ item.label }}</label><br>
@@ -22,7 +22,7 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit" id="cadastro">{% trans "Sign Up" %} &raquo;</button>
+  <button type="submit" class="btn btn-primary button"   id="cadastro">{% trans "Sign Up" %} &raquo;</button>
 </form>
 
     </div>

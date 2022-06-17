@@ -3,51 +3,98 @@
 
 {% block head_title %} Index {% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static '\css\index.css' %}">
+<link rel="stylesheet" href="{% static '\css\index.css' %}"> 
 {% endblock %}
 {% block content %}
 
-<section class="home" id="home">
-    <div class="content">
-        <h3>A plataforma para acompanhamento de metas que você procurava está aqui!</h3>
-        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente.
+
+<div class="container mt-5 pt-5 pb-5">
+    <div class="row ">
+      <div class="col">
+        <h3 class="display-3 home-text pb-3" >A plataforma para acompanhamento de metas que você procurava está aqui!</h3>
+        <p style="font-size: 150%;">Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente.
             Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
-        <a href="{% url 'account_signup' %}" class="btn">cadastre-se</a>
+            <a href="/accounts/signup/" class="btn btn-primary button">CADASTRE-SE</a>
+      </div>
+      <div class="col text-end">
+        <img src="{% static '/imgs/hands.svg' %}" class="img-fluid " alt="Responsive image">
+      </div>
     </div>
+  </div>
 
-    <div>
-        <img src="{% static '/imgs/hands.svg' %}" alt="">
-    </div>
-</section>
-
-<!--home section ends-->
 <!--features section starts-->
-<section class="features" id="features">
-    <h1 class="heading">Conheça como funciona a nossa solução:</h1>
-    <div class="box-container">
-        <div class="box">
-            <p>Com a Bee você é capaz de criar diversos projetos para sua empresa. Cada um deles precisa ter um objetivo bem definido.</p>
+
+<div class="container-fluid cards pt-5 pb-5 shadow">
+    <div class="container">
+        <div class="row">
+        <div class="col">
+            <h1 class=#>Conheça como funciona a nossa solução</h1>
         </div>
-        <div class="box">
-            <p>Em cada projeto, você pode definir quais serão os objetivos e métricas a serem utilizados durante o processo.</p>
-        </div>
-        <div class="box">
-            <p>O software oferece um relatório detalhado da progressão dos objetivos ao longo do tempo.</p>
         </div>
     </div>
-</section>
+
+
+    <div class="container pb-3">
+        <div class="row">
+            <div class="col py-3 d-flex justify-content-center">
+                <div class="card h-100 shadow" style="width: 18rem;">
+                    
+                    <img src="{% static '/imgs/plan.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">Com a Bee você é capaz de criar diversos projetos para sua empresa. Cada um deles precisa ter um objetivo bem definido.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3 d-flex justify-content-center">
+                <div class="card h-100 shadow" style="width: 18rem;">
+                    <img src="{% static '/imgs/target.jpg' %}" class="card-img-top target" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">Em cada projeto, você pode definir quais serão os objetivos e métricas a serem utilizados durante o processo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3 d-flex justify-content-center">
+                <div class="card h-100 shadow" style="width: 18rem;">
+                    <img src="{% static '/imgs/report.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">O software oferece um relatório detalhado da progressão dos objetivos ao longo do tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--features section ends-->
 <!--contact us section starts-->
-<div class="contact">
-   <h3>Ficou com alguma dúvida?</h3>
-   <p>Deixe seus dados abaixo que em breve entraremos em contato:</p>
-    <form action="">
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="E-mail">
-        <input type="submit" value="Enviar">
-    </form>
+
+<div class="container pt-5 pb-1">
+    <div class="row">
+      <div class="col">
+        <h3>Ficou com alguma dúvida?</h3>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Deixe seus dados abaixo que em breve entraremos em contato:</p>
+        </div>
+    </div>
 </div>
+
+<div class="container pb-5">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <input type="Nome" id="inputNome" class="form-control" aria-describedby="passwordHelpInline" placeholder="Nome">
+        </div>
+        <div class="col-auto">
+            <input type="email" id="inputEmail" class="form-control" aria-describedby="passwordHelpInline" placeholder="E-mail">
+        </div>
+        <div class="col-auto">
+            <input class="btn btn-primary button" type="submit" value="Enviar">
+        </div>
+    </div>
+</div>
+
 <!--contact us section ends-->
 
 {% endblock %}
