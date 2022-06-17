@@ -40,7 +40,7 @@ def createProject(request):
         project = Project(projectName = projectName)
         project.save()
         
-        return HttpResponse('Projeto Criado!')
+        return HttpResponse('Projeto Criado!!')
     
     
 # Create a Objective
