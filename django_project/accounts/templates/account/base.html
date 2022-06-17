@@ -1,87 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NTQ5Q5X');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bee - {% block head_title %}{% endblock %}</title>
+        <link rel="icon" href="{% static '\imgs\hive logo.svg' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static '\css\base.css' %}">
+        {% block extra_head %}{% endblock %}
+    </head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTQ5Q5X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <header class="p-3">
+            <nav class="navbar navbar-expand-lg" style="background-color: #FFF27D">
+                <div class="container-fluid">
+                    <a href="{% url 'project_index' %}" class="logo">
+                        <img src="{% static '/imgs/Hive logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                        <span>Bee</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="primary-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link home" aria-current="page" href="{% url 'project_index' %}">Home <span class="sr-only"></span></a>
+                            </li>
+                        </ul>
+                        <ul class="secondary-nav">
+                            {% if request.user.is_authenticated %}
+                                <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
+                            {% else %}
+                                {% if request.path == '/accounts/signup/' %}
+                                {% else %}
+                                    <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
+                                {% endif %}
 
-<title>{% block head_title %}{% endblock %}</title>
-{% block extra_head %}
-{% endblock %}
-</head>
-<body>
-{% block body %}
-<div class="container-fluid bg-warning" >
-  <nav class="navbar navbar-expand-lg bg-warning">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">bee.espertamente.com.br</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'project_index' %}">Home</a>
-          </li>
-          {% if request.user.is_authenticated %}
-          <li class="nav-item">
-            <h5> Hello {{ request.user }}</h5>
-            </li>
-          <li>
-            <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Cadastre-se</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-          </li>
-          {% endif %}
+                                {% if request.path == '/accounts/login/' %}
+                                {% else %}
+                                    <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                                {% endif %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--
+        <header>
+            <div>
+                <img src="{% static '/imgs/Hive logo.svg' %}" class=logo-img alt="">
+                <a href="#" class="logo"><span>bee</span></a>
+            </div>
+            <nav class="navbar">
+                <ul class="primary-nav">
+                    <li><a class="home" aria-current="page" href="{% url 'project_index' %}">Home</a> </li>
+                </ul>
+            </nav>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="secondary-nav">
+                {% if request.user.is_authenticated %}
+                    <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
+                {% else %}
+                    <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
+                    <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                {% endif %}
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-  {% if messages %}
 
-  <div>
-    <strong>Messages:</strong>
-    <ul>
-      {% for message in messages %}
-      <li>{{message}}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+        </header>
 
+        {% if messages %}
+            <div>
+                <strong>Messages:</strong>
+                <ul>
+                    {% for message in messages %}
+                    <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        -->
+        
+        {% block content %}{% endblock %}
+        
+        {% block extra_body %}{% endblock %}
 
-  {% block content %}
-  {% endblock %}
-  {% endblock %}
-  {% block extra_body %}
-  {% endblock %}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</div>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
 </html>

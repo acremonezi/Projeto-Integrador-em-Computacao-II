@@ -1,22 +1,37 @@
-{% extends 'account/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bee</title>
+    <link rel="shortcut icon" href="bee.ico"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/style.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+<!--header section starts-->
+<header>
+    <a href="#" class="logo"><span>Bee</span></a>
 
-{% block head_title %} Index {% endblock %}
-{% block extra_head %}
-<link rel="stylesheet" href="{% static '\css\index.css' %}">
-{% endblock %}
-{% block content %}
+    <nav class="navbar">
+        <a href="#login">Login</a>
+        <a href="#cadastro" id="cadastro">Cadastro</a>
+    </nav>
+</header>
+<!--header section ends-->
+
+<!--home section starts-->
 
 <section class="home" id="home">
     <div class="content">
         <h3>A plataforma para acompanhamento de metas que você procurava está aqui!</h3>
-        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente.
-            Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
-        <a href="{% url 'account_signup' %}" class="btn">cadastre-se</a>
+        <p>Com a Bee, você e sua equipe serão capazes de alcançar suas metas de maneira mais eficiente. Faça seu cadastro gratuitamente e comece hoje a transformar seus objetivos em realidade!</p>
+        <a href="#" class="btn">cadastre-se</a>
     </div>
 
     <div>
-        <img src="{% static '/imgs/hands.svg' %}" alt="">
+        <img src="img/team (1).png" alt="">
     </div>
 </section>
 
@@ -49,5 +64,5 @@
     </form>
 </div>
 <!--contact us section ends-->
-
-{% endblock %}
+</body>
+</html>
