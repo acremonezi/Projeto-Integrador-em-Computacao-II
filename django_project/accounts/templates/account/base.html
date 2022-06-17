@@ -17,64 +17,38 @@
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTQ5Q5X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <header class="p-3">
-            <nav class="navbar navbar-expand-lg" style="background-color: #FFF27D">
+       
+        <div class="container sticky-top " >
+            <nav class="navbar rounded-bottom navbar-expand-lg navbar-light shadow" style="background-color: #FFF27D;">
                 <div class="container-fluid">
-                    <a href="{% url 'project_index' %}" class="logo">
-                        <img src="{% static '/imgs/Hive logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-                        <span>Bee</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="{% static '/imgs/Hive logo.svg' %}" alt="" width="30px" height="30px" class="d-inline-block align-text-top">
+                    <a class="navbar-brand"  style="font-size: 32px; font-weight: 400; margin: 0; padding: 0;" href="{% url 'project_index' %}">bee</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="primary-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link home" aria-current="page" href="{% url 'project_index' %}">Home <span class="sr-only"></span></a>
-                            </li>
-                        </ul>
-                        <ul class="secondary-nav">
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: flex-end;">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="{% url 'project_index' %}">Home</a>
                             {% if request.user.is_authenticated %}
-                                <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
+                                <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
                             {% else %}
-                                {% if request.path == '/accounts/signup/' %}
-                                {% else %}
-                                    <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
-                                {% endif %}
+                            {% if request.path == '/accounts/signup/' %}
+                            {% else %}
+                            <a class="nav-link  cadastro" href="{% url 'account_signup' %}">Cadastro</a>
+                            {% endif %}
 
-                                {% if request.path == '/accounts/login/' %}
+                            {% if request.path == '/accounts/login/' %}
                                 {% else %}
-                                    <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                                    <a class="nav-link " href="{% url 'account_login' %}">Entrar</a>
                                 {% endif %}
                             {% endif %}
-                        </ul>
+                            
+                        </div>
                     </div>
                 </div>
             </nav>
-        </header>
-        <!--
-        <header>
-            <div>
-                <img src="{% static '/imgs/Hive logo.svg' %}" class=logo-img alt="">
-                <a href="#" class="logo"><span>bee</span></a>
-            </div>
-            <nav class="navbar">
-                <ul class="primary-nav">
-                    <li><a class="home" aria-current="page" href="{% url 'project_index' %}">Home</a> </li>
-                </ul>
-            </nav>
-
-            <ul class="secondary-nav">
-                {% if request.user.is_authenticated %}
-                    <li><a class="nav-link" href="{% url 'account_logout' %}">Sair</a></li>
-                {% else %}
-                    <li><a class="nav-link" id="cadastro" href="{% url 'account_signup' %}">Cadastro</a></li>
-                    <li><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
-                {% endif %}
-            </ul>
-
-        </header>
-
+        </div>
+       
         {% if messages %}
             <div>
                 <strong>Messages:</strong>
@@ -85,12 +59,12 @@
                 </ul>
             </div>
         {% endif %}
-        -->
         
+    
         {% block content %}{% endblock %}
         
         {% block extra_body %}{% endblock %}
-
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>
