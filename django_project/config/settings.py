@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
+# from pathlib import Path
 import os
 import environ
 
@@ -36,6 +36,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -65,10 +66,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
-
 ]
-# Application definition
 
+
+# Application definition
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,17 +100,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -197,46 +187,27 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 '''
 
-ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS =True
 
+# django_allauth configuration
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 LOGIN_REDIRECT_URL = 'project_index'
-
 ACCOUNT_LOGOUT_REDIRECT_URL = 'project_index'
-
-ACCOUNT_SIGNUP_REDIRECT_URL = 'project_index'
-
+ACCOUNT_SIGNUP_REDIRECT_URL = 'account_login'
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'project_index'
-
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
 ACCOUNT_EMAIL_REQUIRED = True
-
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
-
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
-
-
-
-CCOUNT_EMAIL_VERIFICATION = 'mandatory'
-
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
-
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
-
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
-
 ACCOUNT_LOGIN_ON_PASSWORD_RESET = False
-
 ACCOUNT_SESSION_REMEMBER = None
-
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-
 ACCOUNT_UNIQUE_EMAIL = True
-
 # end allauth config
 
 
@@ -248,3 +219,4 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 DEFAULT_FROM_EMAIL='Bee <noreply@bee.espertamente.com.br>'
 DEFAULT_FROM_NAME = 'Bee'
 SENDGRID_ECHO_TO_STDOUT = True
+# end sendgrid configuration
