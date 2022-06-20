@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
+from django.utils.text import slugify
+from django.urls import reverse
 
 # Table "Account"
 # OBS: It will be maybe used in the future for multi-tenancy accounts.
@@ -16,18 +19,31 @@ from django.contrib.auth.models import User
 # Table "Project"
 class Project(models.Model):
     # Main Columns
-    title = models.CharField(max_length = 200)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
+    title = models.CharField('Titulo', max_length = 200)
+    created = models.DateTimeField('Criado em', auto_now_add=True)
+    updated = models.DateTimeField('Atualizado em', auto_now=True)
+    slug = models.SlugField(max_length=200, blank=True)
     # User Owner Column
     userOwner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='project_owner')
-    
-    # Relationships
-    # account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    # Permissions
+    editproject = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='editproject', blank=True)
+    readproject = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='readproject', blank=True)
+
+    def get_absolute_url(self):
+        return reverse('main:project_detail', args=[self.id, self.slug])
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(f'{self.userOwner}-{self.title}')
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.title} - {self.userOwner}'
+        return self.title
+
+    class Meta:
+        verbose_name: 'Projeto'
+        verbose_name_plural: 'Projetos'
+
 
 # Table "Objective"
 class Objective(models.Model):

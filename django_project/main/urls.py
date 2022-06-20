@@ -7,6 +7,10 @@ app_name = 'main'
 
 urlpatterns = [
     path('dashboard', views.dashboard, name = "dashboard"),
+    path('dashboard/createproject', views.CreateProject.as_view(), name="create_project"),
+    path('dashboard/list_projects', views.list_projects, name = "list_projects"),
+    path('dashboard/project_detail/<int:id>/<slug:slug>/', views.project_detail, name="project_detail"),
+    path('dashboard/edit_project/<int:pk>/', views.PrecosUpdateView.as_view(), name='edit_project'),
     # path('create-account/', views.createAccount, name = "Create Account"),
     #path('project/create/', views.createProject, name = "Create Project"),
     #path('objective/create/', views.createObjective, name = "Create Objective"),

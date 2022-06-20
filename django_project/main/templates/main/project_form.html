@@ -1,0 +1,17 @@
+{% extends 'main/dashboard.html' %}
+{% load static %}
+
+{% block dashboard %}
+<div class="container-fluid row">
+    <h1 class="text-center">{{ goal }} um Projeto</h1>
+</div>
+<div class="container-fluid row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {{ form.as_p }}
+    <button class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{% endblock %}

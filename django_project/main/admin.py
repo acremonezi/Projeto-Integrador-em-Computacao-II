@@ -6,6 +6,11 @@ from . import models
 
 # Simple Method
 #admin.site.register(models.Account)
-admin.site.register(models.Project)
+@admin.register(models.Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'userOwner']
+    list_filter = ['created', 'title']
+
+
 admin.site.register(models.Objective)
 admin.site.register(models.Metric)

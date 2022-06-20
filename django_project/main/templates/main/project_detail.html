@@ -1,0 +1,17 @@
+{% extends 'main/dashboard.html' %}
+{% load static %}
+
+{% block dashboard %}
+<h1>Detalhes do projeto</h1>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-3">
+        {{ project.title }} - {{ project.userOwner }}
+    </div>
+    <div class="col-1">
+        <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:edit_project' project.id %}" role="button">Editar</a>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{% endblock %}

@@ -80,13 +80,13 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="{% url 'main:dashboard' %}" class="nav-link link-dark">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
                             Dashboard
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="{% url 'main:list_projects' %}" class="nav-link link-dark">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
                             Projetos
                         </a>
@@ -121,6 +121,7 @@
             </div>
         </div>
         <div class="col-9">
+            {% block dashboard %}
             <h1 class="display-4 fw-normal">Resumo</h1>
             
             <div class="row">
@@ -138,7 +139,7 @@
                                 <li>Outra info</li>
                                 <li>Mais outra</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">+ projeto</button>
+                            <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:create_project' %}" role="button">+ projeto</a>
                         </div>
                     </div>
                 </div>
@@ -179,6 +180,7 @@
                     </div>
                 </div>
             </div>
+            {% endblock %}
         </div>
     </div>
 </div>

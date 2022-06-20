@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
 from django.http import HttpResponse
+from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from . import forms
 from . import models
 
 # Create an Account
@@ -31,6 +35,31 @@ def dashboard(request):
     return render(request, 'main/dashboard.html', context)
 
 
+class CreateProject(LoginRequiredMixin, CreateView):
+    model = models.Project
+    fields = ['title', 'editproject', 'readproject']
+    extra_context = {'goal': 'Criar'}
+
+
+@login_required
+def list_projects(request):
+    projects = models.Project.objects.filter(userOwner=request.user.id)
+    context = {'projects': projects}
+    return render(request, 'main/list_projects.html', context)
+
+
+@login_required
+def project_detail(request, id, slug):
+    project = get_object_or_404(models.Project, id=id)
+    context = {'project': project}
+    return render(request, 'main/project_detail.html', context)
+
+
+class PrecosUpdateView(LoginRequiredMixin, UpdateView):
+    model = models.Project
+    form_class = forms.ProjectForm
+    success_url = reverse_lazy('main:list_projects')
+    extra_context = {'goal': 'Editar'}
 '''    
 def createProject(request):
     if request.method == 'GET':
