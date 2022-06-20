@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
+
+.cards{
+    background-color: #FFF27D;
+}
+
+.home-text{
+    line-height: 90% ;
+    font-weight: 500;
+}
+
+.button{
+    background-color: #FFB743 ;
+    border-color: #FFB743;
+    font-weight:400;
+}

@@ -1,11 +1,11 @@
-from re import A
+#from re import A
 from django.contrib import admin
-from main.models import Account, Project, Objective, Metric
+from . import models
 
 # Register your models here.
 
 # Simple Method
-admin.site.register(Account)
-admin.site.register(Project)
-admin.site.register(Objective)
-admin.site.register(Metric)
+#admin.site.register(models.Account)
+admin.site.register(models.Project)
+admin.site.register(models.Objective)
+admin.site.register(models.Metric)

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Account, Project, Objective, Metric
+from django.contrib.auth.decorators import login_required
+from . import models
 
 # Create an Account
 # The reason it is necessary is just in case
@@ -23,6 +24,14 @@ from .models import Account, Project, Objective, Metric
         
         
 # Create a Project
+@login_required
+def dashboard(request):
+    projects = models.Project.objects.all().filter(userOwner=request.user.id)
+    context = {'projects': projects}
+    return render(request, 'main/dashboard.html', context)
+
+
+'''    
 def createProject(request):
     if request.method == 'GET':
         return render(request, 'create-project/index.html')
@@ -42,7 +51,7 @@ def createProject(request):
         
         return HttpResponse('Projeto Criado!!')
     
-    
+
 # Create a Objective
 def createObjective(request):
     if request.method == 'GET':
@@ -83,3 +92,4 @@ def createMetric(request):
         metric.save()
         
         return HttpResponse('Metrica Criada!')
+'''

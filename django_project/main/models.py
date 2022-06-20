@@ -16,15 +16,18 @@ from django.contrib.auth.models import User
 # Table "Project"
 class Project(models.Model):
     # Main Columns
-    createdDate = models.DateField(auto_now_add=True)
-    projectName = models.CharField(max_length = 200)
-    
+    title = models.CharField(max_length = 200)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
     # User Owner Column
-    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+    userOwner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='project_owner')
     
     # Relationships
     # account = models.ForeignKey(Account, on_delete=models.CASCADE)
-    
+
+    def __str__(self):
+        return f'{self.title} - {self.userOwner}'
 
 # Table "Objective"
 class Objective(models.Model):

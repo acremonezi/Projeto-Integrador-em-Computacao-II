@@ -25,6 +25,7 @@ urlpatterns = [
     path('', accountsviews.index, name='project_index'), # index page
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('main/', include('main.urls', namespace='main')),
 
     # All templates for allauth are in django_project/accounts/templates/account the base.html for the project
     path('accounts/', include('allauth.urls')),
