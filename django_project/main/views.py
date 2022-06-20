@@ -7,27 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from . import forms
 from . import models
 
-# Create an Account
-# The reason it is necessary is just in case
-# a user needs to have access to more than one Account/Organization.
-# Image an Account as a "Company".
 
-# def createAccount(request):
-#     if request.method == 'GET':
-#         return render(request, 'create-account/index.html')
-    
-#     elif request.method == 'POST':  
-#         accountName = request.POST.get('accountName')
-        
-#         # Create an instance of the class "Account" named "account"
-#         # and save it into the database.
-#         account = Account(accountName = accountName)
-#         account.save()
-        
-#         return HttpResponse('Conta Criada!')
-        
-        
-# Create a Project
 @login_required
 def dashboard(request):
     projects = models.Project.objects.all().filter(userOwner=request.user.id)
@@ -35,10 +15,11 @@ def dashboard(request):
     return render(request, 'main/dashboard.html', context)
 
 
+# views for project
 class CreateProject(LoginRequiredMixin, CreateView):
     model = models.Project
     fields = ['title', 'editproject', 'readproject']
-    extra_context = {'goal': 'Criar'}
+    extra_context = {'goal': 'Criar'}  # for use in template
 
 
 @login_required
@@ -55,11 +36,15 @@ def project_detail(request, id, slug):
     return render(request, 'main/project_detail.html', context)
 
 
-class PrecosUpdateView(LoginRequiredMixin, UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Project
     form_class = forms.ProjectForm
     success_url = reverse_lazy('main:list_projects')
-    extra_context = {'goal': 'Editar'}
+    extra_context = {'goal': 'Editar'}  # for use in template
+
+# end of views for project
+
+
 '''    
 def createProject(request):
     if request.method == 'GET':
@@ -122,3 +107,25 @@ def createMetric(request):
         
         return HttpResponse('Metrica Criada!')
 '''
+
+# Create an Account
+# The reason it is necessary is just in case
+# a user needs to have access to more than one Account/Organization.
+# Image an Account as a "Company".
+
+# def createAccount(request):
+#     if request.method == 'GET':
+#         return render(request, 'create-account/index.html')
+
+#     elif request.method == 'POST':
+#         accountName = request.POST.get('accountName')
+
+#         # Create an instance of the class "Account" named "account"
+#         # and save it into the database.
+#         account = Account(accountName = accountName)
+#         account.save()
+
+#         return HttpResponse('Conta Criada!')
+
+
+# Create a Project

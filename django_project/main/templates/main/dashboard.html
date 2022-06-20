@@ -111,18 +111,18 @@
                         <strong>{{ request.user }}</strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="{% url 'main:create_project' %}">Adicionar Projeto...</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sair...</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col-9">
             {% block dashboard %}
-            <h1 class="display-4 fw-normal">Resumo</h1>
+            <h3 class="display-3 home-text pb-3">Resumo</h3>
             
             <div class="row">
                 
@@ -134,7 +134,7 @@
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">X<small class="text-muted fw-light">projetos novos no mês</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>{{ projects|length }} projetos ativos</li>
+                                <li><a href="{% url 'main:list_projects' %}">{{ projects|length }} projetos ativos</a></li>
                                 <li></li>
                                 <li>Outra info</li>
                                 <li>Mais outra</li>
