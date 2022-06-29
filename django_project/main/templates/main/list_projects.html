@@ -1,0 +1,24 @@
+{% extends 'main/dashboard.html' %}
+
+{% block dashboard %}
+<h1 class="text-center">Meus Projetos</h1>
+{% for project in projects %}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-3">
+        <a href="{{ project.get_absolute_url }}">{{ project.title|capfirst }}</a>
+    </div>
+    <div class="col-1">
+        <a class="w-20 btn btn-lg btn-outline-primary" href="{% url 'main:edit_project' project.id %}" role="button">Editar</a>
+    </div>
+    <div class="row"><span>&nbsp;</span></div>
+    <div class="col-4"></div>
+    
+</div>
+{% endfor %}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"><a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:create_project' %}" role="button">+ projeto</a></div>
+    <div class="col-4"></div>
+</div>
+{% endblock %}

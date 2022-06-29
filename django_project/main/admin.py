@@ -1,11 +1,21 @@
-from re import A
 from django.contrib import admin
-from main.models import Account, Project, Objective, Metric
+from . import models
 
-# Register your models here.
 
-# Simple Method
-admin.site.register(Account)
-admin.site.register(Project)
-admin.site.register(Objective)
-admin.site.register(Metric)
+@admin.register(models.Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'userOwner', 'active']
+    list_filter = ['created', 'title']
+
+
+@admin.register(models.Objective)
+class ObjectiveAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'project', 'active']
+    list_filter = ['created', 'title']
+
+
+@admin.register(models.Metric)
+class MetricAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'objective', 'active']
+    list_filter = ['created', 'title']
+
