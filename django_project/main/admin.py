@@ -4,7 +4,7 @@ from . import models
 
 @admin.register(models.Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'created', 'updated', 'userOwner']
+    list_display = ['title', 'slug', 'created', 'updated', 'userOwner', 'active']
     list_filter = ['created', 'title']
 
 

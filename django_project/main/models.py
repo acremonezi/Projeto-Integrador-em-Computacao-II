@@ -16,6 +16,7 @@ class Project(models.Model):
     # Permissions
     editproject = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='editproject', blank=True)
     readproject = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='readproject', blank=True)
+    active = models.BooleanField(default=True)
 
     def get_absolute_url(self):  # for get one project
         return reverse('main:project_detail', args=[self.id, self.slug])

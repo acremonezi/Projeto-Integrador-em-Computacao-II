@@ -132,12 +132,15 @@
                             <h4 class="my-0 fw-normal">Projetos</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">X<small class="text-muted fw-light">projetos novos no mês</small></h1>
+                            <h1 class="card-title pricing-card-title">{{ active_projects|length }}
+                                <small class="text-muted fw-light">projeto{{ active_projects|pluralize }} ativo{{ active_projects|pluralize }}</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li><a href="{% url 'main:list_projects' %}">{{ projects|length }} projetos ativos</a></li>
+                                <li><a href="{% url 'main:list_projects' %}">{{ all_projects|length }} projeto{{ all_projects|pluralize }}
+                                    trabalhado{{ all_projects|pluralize }}</a></li>
                                 <li></li>
-                                <li>Outra info</li>
-                                <li>Mais outra</li>
+                                <strong>Não proprietário:</strong>
+                                <li>Pode editar {{ can_edit|length }} projeto{{ can_edit|pluralize }}</li>
+                                <li>Pode ler {{ can_read|length }} projeto{{ can_read|pluralize }}</li>
                             </ul>
                             <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:create_project' %}" role="button">+ projeto</a>
                         </div>

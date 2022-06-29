@@ -10,8 +10,16 @@ from . import models
 
 @login_required
 def dashboard(request):
-    projects = models.Project.objects.all().filter(userOwner=request.user.id)
-    context = {'projects': projects}
+    all_projects = models.Project.objects.all().filter(userOwner=request.user.id)
+    active_projects = models.Project.objects.all().filter(userOwner=request.user.id, active=True)
+    can_edit = models.Project.objects.all().filter(editproject=request.user.id)
+    can_read = models.Project.objects.all().filter(readproject=request.user.id)
+    context = {
+        'all_projects': all_projects,
+        'active_projects': active_projects,
+        'can_edit': can_edit,
+        'can_read': can_read
+    }
     return render(request, 'main/dashboard.html', context)
 
 
