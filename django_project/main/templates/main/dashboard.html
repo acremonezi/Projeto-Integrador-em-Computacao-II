@@ -146,43 +146,49 @@
                         </div>
                     </div>
                 </div>
-                
+<!-- Objectives -->
                 <div class="col-sm-3">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Free</h4>
+                            <h4 class="my-0 fw-normal">Objetivos</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                            <h1 class="card-title pricing-card-title">{{ active_objectives|length }}
+                                <small class="text-muted fw-light">objetivo{{ active_objectives|pluralize }} ativo{{ active_objectives|pluralize }}</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
+                                <li><a href="{% url 'main:list_projects' %}">{{ all_objectives|length }} objetivo{{ all_objectives|pluralize }}
+                                    trabalhado{{ all_objectives|pluralize }}</a></li>
+                                <li></li>
+                                <strong>Não proprietário:</strong>
+                                <li>Pode editar {{ can_edit_obj|length }} objetivo{{ can_edit_obj|pluralize }}</li>
+                                <li>Pode ler {{ can_read_obj|length }} objetivo{{ can_read_obj|pluralize }}</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                            <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:create_project' %}" role="button">+ objetivo</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-sm-3">
+<!-- Metrics -->
+                                <div class="col-sm-3">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Free</h4>
+                            <h4 class="my-0 fw-normal">Métricas</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                            <h1 class="card-title pricing-card-title">{{ active_metrics|length }}
+                                <small class="text-muted fw-light">métrica{{ active_metrics|pluralize }} ativo{{ active_metrics|pluralize }}</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
+                                <li><a href="{% url 'main:list_projects' %}">{{ all_metrics|length }} métrica{{ all_metrics|pluralize }}
+                                    trabalhado{{ all_metric|pluralize }}</a></li>
+                                <li></li>
+                                <strong>Não proprietário:</strong>
+                                <li>Pode editar {{ can_edit_m|length }} métrica{{ can_edit_m|pluralize }}</li>
+                                <li>Pode ler {{ can_read_m|length }} métrica{{ can_read_m|pluralize }}</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                            <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'main:create_project' %}" role="button">+ métrica</a>
                         </div>
                     </div>
                 </div>
-            </div>
             {% endblock %}
         </div>
     </div>

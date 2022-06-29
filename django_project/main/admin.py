@@ -8,6 +8,14 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ['created', 'title']
 
 
-admin.site.register(models.Objective)
-admin.site.register(models.Metric)
-# admin.site.register(models.Account)
+@admin.register(models.Objective)
+class ObjectiveAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'project', 'active']
+    list_filter = ['created', 'title']
+
+
+@admin.register(models.Metric)
+class MetricAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created', 'updated', 'objective', 'active']
+    list_filter = ['created', 'title']
+

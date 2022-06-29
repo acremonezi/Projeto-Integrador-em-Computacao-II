@@ -10,15 +10,40 @@ from . import models
 
 @login_required
 def dashboard(request):
+    # Projects
     all_projects = models.Project.objects.all().filter(userOwner=request.user.id)
     active_projects = models.Project.objects.all().filter(userOwner=request.user.id, active=True)
     can_edit = models.Project.objects.all().filter(editproject=request.user.id)
     can_read = models.Project.objects.all().filter(readproject=request.user.id)
+
+    # Objectives
+    all_objectives = models.Objective.objects.all().filter(userOwner=request.user.id)
+    active_objectives = models.Objective.objects.all().filter(userOwner=request.user.id, active=True)
+    can_edit_obj = models.Objective.objects.all().filter(can_edit_objective=request.user.id)
+    can_read_obj = models.Objective.objects.all().filter(can_read_objective=request.user.id)
+
+    # Metric
+    all_metrics = models.Metric.objects.all().filter(userOwner=request.user.id)
+    active_metrics = models.Metric.objects.all().filter(userOwner=request.user.id, active=True)
+    can_edit_m = models.Metric.objects.all().filter(can_edit_metric=request.user.id)
+    can_read_m = models.Metric.objects.all().filter(can_read_metric=request.user.id)
+
     context = {
+        # Projects
         'all_projects': all_projects,
         'active_projects': active_projects,
         'can_edit': can_edit,
-        'can_read': can_read
+        'can_read': can_read,
+        # objectives
+        'all_objectives': all_objectives,
+        'active_objectives': active_objectives,
+        'can_edit_obj': can_edit_obj,
+        'can_read_obj': can_read_obj,
+        # metric
+        'all_metrics': all_metrics,
+        'active_metrics': active_metrics,
+        'can_edit_m': can_edit_m,
+        'can_read_m': can_read_m
     }
     return render(request, 'main/dashboard.html', context)
 
