@@ -75,4 +75,4 @@ Estrutura de microserviços com (**arquitetura em n-níveis**) utilizando um con
 6. Repositório Git: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/
 7. Versões do Software: https://github.com/acremonezi/Projeto-Integrador-em-Computacao-II/releases
 8. Software: https://bee.espertamente.com.br/
-9. Vídeo: 
+9. Vídeo: https://youtu.be/CRUVC7qnq4s
